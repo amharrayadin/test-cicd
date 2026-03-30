@@ -1,0 +1,21 @@
+name: Deploy on Tag
+
+on:
+    push:
+        tags:
+            - "v*" # trigger kalau tag v1.0.0, v2.1.0, dll
+
+jobs:
+    deploy:
+        runs-on: self-hosted
+
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Deploy (git pull)
+              run: |
+                  cd C:\laragon\www\my-app
+
+                  git fetch --all
+                  git reset --hard origin/main
