@@ -15,7 +15,7 @@ jobs:
 
             - name: Deploy (git pull)
               run: |
-                  cd C:\laragon\www\my-app
+                  cd C:\laragon\www\test-cicd
 
                   git fetch --all
                   git reset --hard origin/main
